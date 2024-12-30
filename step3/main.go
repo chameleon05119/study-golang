@@ -32,6 +32,8 @@ func handleAdd(w http.ResponseWriter, r *http.Request){
 	todoList = append(todoList, todo)
 	// 更新されたtodoListでテンプレートを更新
 	handleTodo(w,r)
+	// /todoへリダイレクトさせる
+	http.Redirect(w, r, "/todo", 303)
 }
 
 func main(){
